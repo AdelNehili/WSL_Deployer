@@ -1,0 +1,64 @@
+############################
+# General
+############################
+*.log
+*.tmp
+*.swp
+*.bak
+.DS_Store
+Thumbs.db
+
+############################
+# Environment / secrets
+############################
+.env
+.env.*
+*.env
+
+############################
+# Temporary files
+############################
+temp.txt
+
+############################
+# Filebrowser (stateful data)
+############################
+Filebrowser/admin/database/
+Filebrowser/admin/data/
+Filebrowser/admin/config/settings.json
+
+############################
+# LLM - HuggingFace
+############################
+LLM/HuggingFace/models/
+
+############################
+# LLM - Ollama
+############################
+LLM/Ollama/ollama_data/
+LLM/Ollama/openwebui_data/
+
+############################
+# Minecraft (VERY stateful)
+############################
+
+# Ignore everything inside minecraft-data except configs you may want to keep
+Minecraft/**/minecraft-data/*
+
+############################
+# Archives
+############################
+Minecraft/0_Archives/
+
+############################
+# Docker runtime leftovers (optional)
+############################
+**/data/
+**/db/
+**/database/
+
+############################
+# Keep docker-compose files and scripts
+############################
+!docker-compose.yml
+!*.sh
