@@ -1,0 +1,42 @@
+services:
+  minecraft:
+    image: itzg/minecraft-server:latest
+    container_name: minecraft-paper
+    restart: unless-stopped
+
+    ports:
+      - "25565:25565"   # Explicit server port
+
+    volumes:
+      - ./minecraft-data:/data   # Explicit data path
+
+    environment:
+      # Server type
+      TYPE: PAPER
+      VERSION: 1.20.4
+
+      # Memory limits
+      MEMORY: 4G
+
+      # Accept Mojang EULA
+      EULA: "TRUE"
+
+      # Server settings
+      MODE: creative
+      DIFFICULTY: easy
+      MAX_PLAYERS: 20
+      ENABLE_COMMAND_BLOCK: "true"
+      SEED: "8762942034111944820"
+
+      # Operator
+      OPS: tochimizu
+
+      # Performance optimizations
+      USE_AIKAR_FLAGS: "true"
+      VIEW_DISTANCE: 6
+      SIMULATION_DISTANCE: 6
+
+    deploy:
+      resources:
+        limits:
+          memory: 5G
