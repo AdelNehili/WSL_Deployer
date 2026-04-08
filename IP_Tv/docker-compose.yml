@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  tvheadend:
+    image: lscr.io/linuxserver/tvheadend:latest
+    container_name: tvheadend
+    network_mode: bridge
+    ports:
+      - "9981:9981" # Web UI
+      - "9982:9982" # HTSP streaming
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Brussels
+    volumes:
+      - ./config/tvheadend:/config
+      - ./recordings:/recordings
+    restart: unless-stopped
+
+  xteve:
+    image: alturismo/xteve:latest
+    container_name: xteve
+    ports:
+      - "34400:34400"
+    environment:
+      - TZ=Europe/Brussels
+    volumes:
+      - ./config/xteve:/config
+    restart: unless-stopped
+
+  iptvnator:
+    image: ghcr.io/4gray/iptvnator:latest
+    container_name: iptvnator
+    ports:
+      - "8080:8080"
+    environment:
+      - TZ=Europe/Brussels
+    restart: unless-stopped

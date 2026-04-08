@@ -7,12 +7,13 @@ worlds=()
 
 #_____________________________________________________Tools_____________________________________________________
 usage() {
+  echo "Usage: $0 up"
+  echo "Usage: $0 down"
+  echo "_____________________"
+  echo "Usage: $0 save"
   echo "Usage: $0 reset"
   echo "Usage: $0 remove"
-  echo "Usage: $0 save"
-  echo "Usage: $0 run"
-  echo "Usage: $0 down"
-    
+  
   exit 1
 }
 
@@ -32,7 +33,7 @@ scan_worlds() {
 }
 
 display_worlds() {
-  echo "Available worlds:"
+  echo "Available worlds with minecraft-data folder:"
   for i in "${!worlds[@]}"; do
     printf "%d) %s\n" "$((i+1))" "${worlds[$i]}"
   done
@@ -172,7 +173,7 @@ main() {
       choose_world
       save_world
       ;;
-    run)
+    up)
       scan_worlds
       display_worlds
       choose_world

@@ -1,7 +1,7 @@
 services:
   minecraft:
     image: itzg/minecraft-server:latest
-    container_name: minecraft-paper
+    container_name: minecraft-paper-aprem
     restart: unless-stopped
 
     ports:
@@ -13,7 +13,7 @@ services:
     environment:
       # Server type
       TYPE: PAPER
-      VERSION: 1.20.4
+      VERSION: 1.21.4
 
       # Memory limits
       MEMORY: 4G

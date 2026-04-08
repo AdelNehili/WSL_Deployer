@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source venv/bin/activate
+
 set -e
 
 # -----------------------------
@@ -14,8 +16,8 @@ TARGET_DIR="./models"
 # -----------------------------
 echo "Checking dependencies..."
 
-if ! command -v huggingface-cli &> /dev/null; then
-    echo "huggingface-cli not found. Installing..."
+if ! command -v hf &> /dev/null; then
+    echo "hf CLI not found. Installing..."
     pip install -U "huggingface_hub[cli]"
 fi
 
@@ -28,7 +30,7 @@ mkdir -p "$TARGET_DIR"
 # Download model
 # -----------------------------
 echo "Downloading model: $MODEL_FILE"
-huggingface-cli download "$MODEL_REPO" \
+hf download "$MODEL_REPO" \
     --include "$MODEL_FILE" \
     --local-dir "$TARGET_DIR" \
     --local-dir-use-symlinks False

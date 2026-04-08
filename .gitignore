@@ -28,6 +28,16 @@ Filebrowser/admin/data/
 Filebrowser/admin/config/settings.json
 
 ############################
+# Kimai Calendar (stateful data)
+############################
+Kimai_Calendar/kimai_data/
+Kimai_Calendar/kimai_mysql/
+Kimai_Calendar/kimai_plugins/
+Kimai_Calendar/.env
+Kimai_Calendar/env
+
+
+############################
 # LLM - HuggingFace
 ############################
 LLM/HuggingFace/models/

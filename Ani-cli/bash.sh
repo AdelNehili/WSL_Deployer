@@ -5,7 +5,7 @@ set -e
 #CONFIG TO ADAPT
 anime="Jujutsu Kaisen: Shimetsu Kaiyuu - Zenpen"
 
-episodes=1-6
+episodes=7-12
 
 folder_path="Jujutsu_Kaisen"
 DOWNLOAD_DIR="/srv/media/anime/${folder_path}"
