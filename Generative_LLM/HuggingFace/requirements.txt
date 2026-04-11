@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+transformers
+torch
+accelerate
+sentencepiece
+huggingface_hub
+safetensors
+time

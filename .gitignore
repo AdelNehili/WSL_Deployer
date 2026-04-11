@@ -58,7 +58,7 @@ Minecraft/**/minecraft-data/*
 ############################
 # Archives
 ############################
-Minecraft/0_Archives/
+Minecraft/Archives/
 
 ############################
 # Docker runtime leftovers (optional)
