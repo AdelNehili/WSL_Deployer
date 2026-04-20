@@ -9,5 +9,4 @@ latency=$(echo "$response" | jq -r '.meta.latency_seconds')
 
 echo "MODEL: $model"
 echo "OUTPUT: $output"
-
 echo "LATENCY: $latency"
